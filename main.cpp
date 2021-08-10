@@ -15,8 +15,8 @@ int main()
 
     try
     {
-        /*obj2 = obj1.ToInt();
-        std::cout << obj2;*/
+        obj2 = obj1.ToInt();
+        std::cout << obj2;
         obj3 = obj4.ToChar();
         std::cout << obj3<<std::endl;
     }
@@ -28,6 +28,5 @@ int main()
     obj2.Swap(obj2, obj1);
     std::cout << obj2<<std::endl;
 
-    system("pause");
     return 0;
 }

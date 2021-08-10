@@ -18,12 +18,12 @@ enum class EnumTypes {
     };
 
 union Data{
-    int int_value;
-    unsigned int unsigned_int_value;
-    float float_value;
-    double double_value;
-    bool bool_value;
-    char char_value;
+    int i;
+    unsigned int u;
+    float f;
+    double d;
+    bool b;
+    char c;
 };
 
 class BadType;
@@ -33,7 +33,7 @@ class MultiType
         public:
             MultiType();
             MultiType(const MultiType& Obj);
-            MultiType(MultiType&& rhs);
+            MultiType(MultiType&& rvalue);
 
             MultiType(int value);
             MultiType(unsigned int value);
@@ -44,11 +44,11 @@ class MultiType
 
 
 
-            MultiType& operator=(const MultiType& rhs);
-            MultiType& operator=(MultiType&& rhs);
+            MultiType& operator=(const MultiType& rvalue);
+            MultiType& operator=(MultiType&& rvalue);
             friend std::ostream& operator<<(std::ostream& out, const MultiType& obj);
 
-            void Swap(MultiType& lhs, MultiType& rhs);
+            void Swap(MultiType& lvalue, MultiType& rvalue);
 
             const char* GetTypeName() const;
 
