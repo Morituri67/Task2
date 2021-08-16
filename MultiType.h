@@ -50,8 +50,6 @@ class MultiType
 
             void Swap(MultiType& lvalue, MultiType& rvalue);
 
-            const char* GetTypeName() const;
-
             int ToInt() const;
             unsigned int ToUnsignedInt() const;
             float ToFloat() const;
