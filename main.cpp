@@ -9,9 +9,9 @@ int main()
     MultiType obj3 = 'c';
     MultiType obj4 = 'a';
 
-    std::cout<< obj1.GetTypeName() << std::endl;
-    std::cout<< obj2.GetTypeName() << std::endl;
-    std::cout<< obj3.GetTypeName() << std::endl;
+    std::cout<< obj1<< std::endl;
+    std::cout<< obj2<< std::endl;
+    std::cout<< obj3<< std::endl;
 
     try
     {
