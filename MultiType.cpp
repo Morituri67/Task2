@@ -76,28 +76,6 @@ void MultiType::Swap(MultiType & lvalue, MultiType & rvalue){
     std::swap(lvalue.m_type, rvalue.m_type);
 }
 
-const char * MultiType::GetTypeName() const
-{
-    switch (m_type)
-    {
-        case EnumTypes::BOOL:
-            return "bool";
-        case EnumTypes::CHAR:
-            return "char";
-        case EnumTypes::INT:
-            return "int";
-        case EnumTypes::UNSIGNED_INT:
-            return "unsigned int";
-        case EnumTypes::FLOAT:
-            return "float";
-        case EnumTypes::DOUBLE:
-            return "double";
-        default:
-            return "type undefined";
-    }
-}
-
-
 int MultiType::ToInt() const{
     if (m_type != EnumTypes::INT)
         throw BadType();
@@ -140,22 +118,21 @@ char MultiType::ToChar() const{
         return m_data.c;
 }
 std::ostream & operator<<(std::ostream & out, const MultiType & obj){
-    out << obj.GetTypeName() << " -> ";
 
     switch (obj.get_Type())
     {
         case EnumTypes::INT:
-            return out << obj.m_data.i;
+            return out<< "\n INT-> " << obj.m_data.i;
         case EnumTypes::UNSIGNED_INT:
-            return out << obj.m_data.u;
+            return out<< "\n UNSIGNED INT-> " << obj.m_data.u;
         case EnumTypes::FLOAT:
-            return out << obj.m_data.f;
+            return out<< "\n -> FLOAT" << obj.m_data.f;
         case EnumTypes::DOUBLE:
-            return out << obj.m_data.d;
+            return out<< "\n -> DOUBLE" << obj.m_data.d;
         case EnumTypes::BOOL:
-            return out << obj.m_data.b;
+            return out<< "\n -> BOOL" << obj.m_data.b;
         case EnumTypes::CHAR:
-            return out << obj.m_data.c;
+            return out<< "\n -> CHAR" << obj.m_data.c;
         default:
             return out << "can't represent data";
     }
